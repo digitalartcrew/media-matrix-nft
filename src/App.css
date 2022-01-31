@@ -1,0 +1,76 @@
+.action-btn {
+	width: 15%;
+	margin-right: 10px;
+}
+
+.navigation-bar li {
+	display: inline;
+}
+.entity-card-container {
+	padding: 10px;
+}
+
+.entity-card-details {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 200px;
+	overflow: hidden;
+}
+
+.entity-card-description {
+	text-overflow: ellipsis;
+}
+
+.recipe-header {
+	margin-bottom: 40px;
+}
+
+.ingredients-container {
+	margin-bottom: 20px;
+}
+
+.directions-container {
+	margin-bottom: 20px;
+}
+
+.recipe-form-row {
+	margin-bottom: 5px;
+}
+
+.dot {
+	height: 35px;
+	width: 35px;
+	padding-top: 5px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+}
+
+.input-list-form-row {
+	margin-bottom: 20px;
+}
+
+.input-list-form-row__inputs {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.input-list-form-row__input {
+	flex: 1;
+	padding-right: 2%;
+	padding-left: 2%;
+}
+
+.input-list-form-row__action-btn {
+	margin-right: 10px;
+}
+
+.add-btn {
+	margin-bottom: 20px;
+}
+
+.recipe-action-btn {
+	margin-right: 10px;
+}
