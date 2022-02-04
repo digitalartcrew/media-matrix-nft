@@ -1,3 +1,7 @@
+Notes or Chis
+
+1. In the root directory create a folder called `.near-credentials`
+2. Below where is says install yarn use `brew install yarn`
 Guest Book
 ==========
 
