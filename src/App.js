@@ -21,7 +21,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
           <Route path="/artists/" component={ArtistsPage} />
           <Route path="/artists/:artistId" component={ArtistPage} />
           <Route path="/create" component={CreateNftPage} />
-          <Route exact strict path="/" element={<HomePage contract={contract} currentUser={currentUser} nearConfig={nearConfig} wallet={wallet}/>} />
+          <Route exact strict path="/" component={HomePage} />
         </Switch>
       </Container>
     </Router>
