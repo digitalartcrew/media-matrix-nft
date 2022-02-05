@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from "react-dom";
 import App from './App';
 import getConfig from './config.js';
 import * as nearAPI from 'near-api-js';
@@ -55,7 +55,7 @@ async function initContract() {
 
 window.nearInitPromise = initContract().then(
   ({ contract, currentUser, nearConfig, walletConnection }) => {
-    ReactDOM.render(
+  render(
       <App
         contract={contract}
         currentUser={currentUser}
