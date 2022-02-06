@@ -1,12 +1,24 @@
-import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import React from "react";
+import PropTypes from 'prop-types';
 
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const MainNavBar = () => {
+const MainNavBar = ({ currentUser, wallet, nearConfig, contract}) => {
+	const signIn = () => {
+		wallet.requestSignIn(
+		  {contractId: nearConfig.contractName, methodNames: [contract.addMessage.name]}, //contract requesting access
+		  'Media Matrix Library', //optional name
+		  null, //optional URL to redirect to if the sign in was successful
+		  null //optional URL to redirect to if the sign in was NOT successful
+		);
+	  };
+	
+	  const signOut = () => {
+		wallet.signOut();
+		window.location.replace(window.location.origin + window.location.pathname);
+	  };
+	
 	return (
 		<Navbar>
 			<Container>
@@ -18,17 +30,31 @@ const MainNavBar = () => {
 				<Nav.Link href="/nfts">NFTS</Nav.Link>
 				<Nav.Link href="/artists">Artists</Nav.Link>
 				<Nav.Link href="/create">Create</Nav.Link>
-			
-
-		
-				<Navbar.Collapse className="justify-content-end">
-					<Navbar.Text>
-						Signed in as: <a href="#login">NFT Buyer or User</a>
-					</Navbar.Text>
-				</Navbar.Collapse>
+				{ currentUser
+					? <button onClick={signOut}>Log out</button>
+					: <button onClick={signIn}>Log in</button>
+				}
 			</Container>
 		</Navbar>
 	);
+};
+
+MainNavBar.propTypes = {
+	contract: PropTypes.shape({
+		addMessage: PropTypes.func.isRequired,
+		getMessages: PropTypes.func.isRequired
+	}).isRequired,
+	currentUser: PropTypes.shape({
+		accountId: PropTypes.string.isRequired,
+		balance: PropTypes.string.isRequired
+	}),
+	nearConfig: PropTypes.shape({
+		contractName: PropTypes.string.isRequired
+	}).isRequired,
+	wallet: PropTypes.shape({
+		requestSignIn: PropTypes.func.isRequired,
+		signOut: PropTypes.func.isRequired
+	}).isRequired
 };
 
 export default MainNavBar;

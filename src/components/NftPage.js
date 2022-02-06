@@ -8,4 +8,4 @@ const NftPage = () => {
     );
   };
   
-  export default NftPage;
+export default NftPage;
