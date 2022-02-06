@@ -30,6 +30,7 @@ const MainNavBar = ({ currentUser, wallet, nearConfig, contract}) => {
 				<Nav.Link href="/nfts">NFTS</Nav.Link>
 				<Nav.Link href="/artists">Artists</Nav.Link>
 				<Nav.Link href="/create">Create</Nav.Link>
+				<Nav.Link href="https://docs.ipfs.io/install/">Install IPFS</Nav.Link>
 				{ currentUser
 					? <button onClick={signOut}>Log out</button>
 					: <button onClick={signIn}>Log in</button>

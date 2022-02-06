@@ -18,10 +18,10 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       <Container className="App">
         <MainNavBar contract={contract} currentUser={currentUser} nearConfig={nearConfig} wallet={wallet} />
         <Switch>
+          <Route path="/nfts/:nftId" component={NftPage} />
           <Route path="/nfts" component={NftsPage} />
-          <Route path="/nft/:nftId" component={NftPage} />
-          <Route path="/artists/" component={ArtistsPage} />
           <Route path="/artists/:artistId" component={ArtistPage} />
+          <Route path="/artists/" component={ArtistsPage} />
           <Route path="/create" component={CreateNftPage} />
           <Route exact strict path="/" component={HomePage} />
         </Switch>
