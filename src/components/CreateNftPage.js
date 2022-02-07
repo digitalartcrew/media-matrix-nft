@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Form } from "react-bootstrap";
 
 const CreateNftPage = ({ contract }) => {
   const [collections, setCollections] = useState([]);
-  const [nft, setNft] = useState([]);
+  const [nft, setNft] = useState({});
   const [isCollectionFormShowing, setIsCollectionFormShowing] = useState(false);
   const [isNftFormShowing, setIsNftFormShowing] = useState(false);
 
